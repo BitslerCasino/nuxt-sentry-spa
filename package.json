@@ -1,6 +1,6 @@
 {
   "name": "@bitsler/nuxt-sentry-spa",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Sentry module for Nuxt.js SPA build",
   "repository": "bitsler/nuxt-sentry-spa",
   "license": "MIT",
