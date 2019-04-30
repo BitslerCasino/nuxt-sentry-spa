@@ -1,2 +1,1 @@
-lib/sentry.client.js
-lib/sentry.server.js
+lib/sentry.spa.js
