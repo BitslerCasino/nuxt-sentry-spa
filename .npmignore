@@ -1,0 +1,5 @@
+*.md
+renovate.json
+jest.config.js
+test
+.theia

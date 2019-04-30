@@ -1,12 +1,12 @@
 {
-  "name": "@bitsler/sentry",
-  "version": "2.3.5",
-  "description": "Sentry module for Nuxt.js",
-  "repository": "nuxt-community/sentry-module",
+  "name": "@bitsler/nuxt-sentry-spa",
+  "version": "1.0.0",
+  "description": "Sentry module for Nuxt.js SPA build",
+  "repository": "bitsler/nuxt-sentry-spa",
   "license": "MIT",
   "contributors": [
     {
-      "name": "Diederik van den Burger <diederik@webrelated.nl>"
+      "name": "Uni Sayo <unibtc@gmail.com>"
     }
   ],
   "files": [
@@ -16,12 +16,11 @@
   "scripts": {
     "lint": "eslint --ext .vue,.js lib test",
     "release": "standard-version && git push --follow-tags && npm publish",
-    "test": "npm run lint && jest"
+    "test": "npm run lint && jest --runInBand --no-cache --config jest.config.js"
   },
   "dependencies": {
     "@sentry/browser": "^5.1.1",
     "@sentry/integrations": "^5.1.0",
-    "@sentry/node": "^5.1.0",
     "@sentry/webpack-plugin": "^1.6.2",
     "consola": "^2.6.0",
     "deepmerge": "^3.2.0"
@@ -36,7 +35,9 @@
     "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^5.2.2",
-    "nuxt-edge": "^2.6.0-25905610.75e8a893",
+    "esm": "^3.2.22",
+    "jest": "^24.7.1",
+    "nuxt": "^2.6.3",
     "standard-version": "^5.0.2"
   },
   "publishConfig": {

@@ -1,0 +1,19 @@
+{
+  "editor.autoSave": "off",
+  "diffEditor.ignoreTrimWhitespace": true,
+  "workspace.supportMultiRootWorkspace": true,
+  "editor.cursorStyle": "line",
+  "editor.lineNumbers": "on",
+  "editor.cursorBlinking": "phase",
+  "editor.tabSize": 2,
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true
+  },
+  "editor.formatOnSave": true,
+  "list.openMode": "doubleClick",
+  "workspace.preserveWindow": true,
+  "terminal.integrated.lineHeight": 1,
+  "files.eol": "\n"
+}

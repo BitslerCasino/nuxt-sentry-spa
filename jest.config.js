@@ -1,6 +1,6 @@
 module.exports = {
   testEnvironment: 'node',
-  collectCoverage: true,
+  collectCoverage: false,
   collectCoverageFrom: [
     'lib/**/*.js',
     '!lib/plugin.js'
@@ -12,6 +12,6 @@ module.exports = {
     '^@/(.*)$': '<rootDir>/lib/$1'
   },
   transform: {
-    '^.+\\.js$': 'babel-jest'
-  }
+    '\\.m?jsx?$': 'babel-jest'
+  },
 }

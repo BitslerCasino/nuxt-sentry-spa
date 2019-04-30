@@ -1,26 +1,24 @@
-# @nuxtjs/sentry
-[![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/sentry/latest.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/sentry)
-[![npm](https://img.shields.io/npm/dt/@nuxtjs/sentry.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/sentry)
-[![Dependencies](https://david-dm.org/nuxt-community/sentry-module/status.svg?style=flat-square)](https://david-dm.org/nuxt-community/sentry-module)
+# @bitsler/nuxt-sentry-spa
+[![npm (scoped with tag)](https://img.shields.io/npm/v/@bitsler/nuxt-sentry-spa/latest.svg?style=flat-square)](https://npmjs.com/package/@bitsler/nuxt-sentry-spa)
+[![npm](https://img.shields.io/npm/dt/@bitsler/nuxt-sentry-spa.svg?style=flat-square)](https://npmjs.com/package/@bitsler/nuxt-sentry-spa)
 [![js-standard-style](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](http://standardjs.com)
 
-> Sentry module for Nuxt.js
+> Sentry module for Nuxt.js SPA build
 
 ## Features
 
 The module enables error logging through [Sentry](http://sentry.io).
 
-- **Please note** that version 2.2.0 of this package removed the older `public_key` and `private_key` options, since the updated Sentry packages don't support these anymore.
-- **Please note** that version 2.0.0 of this package introduces a breaking change. See [#30](https://github.com/nuxt-community/sentry-module/pull/30) for more information.
+- This is an abstraction of `sentry.client.js` from `https://github.com/nuxt-community/sentry-module` for use with SPA build ONLY!
 
 ## Setup
-- Add `@nuxtjs/sentry` dependency using yarn or npm to your project
-- Add `@nuxtjs/sentry` to `modules` section of `nuxt.config.js`
+- Add `@bitsler/nuxt-sentry-spa` dependency using yarn or npm to your project
+- Add `@bitsler/nuxt-sentry-spa` to `modules` section of `nuxt.config.js`
 
 ```js
 {
   modules: [
-    '@nuxtjs/sentry',
+    '@bitsler/nuxt-sentry-spa',
   ],
 
   sentry: {
@@ -36,16 +34,6 @@ Versions of NuxtJS before v2.4.0 are **not** supported by this package.
 ## Usage
 
 Enter your DSN in the NuxtJS config file. Additional config settings can be found [here](https://docs.sentry.io/clients/javascript/config/).
-
-### Usage in Vue component
-
-In a Vue component, `Sentry` is available as `this.$sentry`, so we can call functions like
-
-```
-this.$sentry.captureException(new Error('example'))
-```
-
-where `this` is a Vue instance.
 
 ## Options
 
@@ -65,23 +53,14 @@ Normally setting required DSN information would be enough.
 ### disableClientSide
 - Type: `Boolean`
   - Default: `process.env.SENTRY_DISABLE_CLIENT_SIDE || false`
-  
-### disableServerSide
-- Type: `Boolean`
-  - Default: `process.env.SENTRY_DISABLE_SERVER_SIDE || false`
-  
+
 ### initialize
 - Type: `Boolean`
   - Default: `process.env.SENTRY_INITIALIZE || true`
 
 ### publishRelease
 - Type: `Boolean`
-  - Default: `process.env.SENTRY_PUBLISH_RELEASE || false`
-  - See https://docs.sentry.io/workflow/releases for more information
-
-### disableServerRelease
-- Type: `Boolean`
-  - Default: `process.env.SENTRY_DISABLE_SERVER_RELEASE || false`
+  - Default: `process.env.SENTRY_PUBLISH_RELEASE || true`
   - See https://docs.sentry.io/workflow/releases for more information
 
 ### disableClientRelease
@@ -91,7 +70,7 @@ Normally setting required DSN information would be enough.
 
 ### clientIntegrations
 - Type: `Dictionary`
-  - Default: 
+  - Default:
   ```
    {
       Dedupe: {},
@@ -105,7 +84,7 @@ Normally setting required DSN information would be enough.
 
 ### serverIntegrations
 - Type: `Dictionary`
-  - Default: 
+  - Default:
   ```
     {
       Dedupe: {},
@@ -135,12 +114,17 @@ Normally setting required DSN information would be enough.
   - If specified, values will override config values for client sentry plugin
 
 ## Submitting releases to Sentry
-Support for the [sentry-webpack-plugin](https://github.com/getsentry/sentry-webpack-plugin) was introduced [#a6cd8d3](https://github.com/nuxt-community/sentry-module/commit/a6cd8d3b983b4c6659e985736b19dc771fe7c9ea). This can be used to send releases to Sentry. Use the publishRelease  option to enable this feature.
+- You can pass the options for `@sentry/webpack-plugin` as a environment variable
+Example:
+```
+SENTRY_ORG=yourorig
+SENTRY_PROJECT=projectname
+SENTRY_DSN=https://yourdsn@sentry.io/2
+```
 
 Note that releases are only submitted to Sentry when `(options.publishRelease && !isDev)` is true.
 
 ## License
 [MIT License](./LICENSE)
 
-Copyright (c) Diederik van den Burger <diederik@glue.group>
 
