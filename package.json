@@ -1,6 +1,6 @@
 {
-  "name": "@nuxtjs/sentry",
-  "version": "2.3.2",
+  "name": "@bitsler/sentry",
+  "version": "2.3.5",
   "description": "Sentry module for Nuxt.js",
   "repository": "nuxt-community/sentry-module",
   "license": "MIT",
@@ -19,8 +19,8 @@
     "test": "npm run lint && jest"
   },
   "dependencies": {
-    "@sentry/integrations": "^5.1.0",
     "@sentry/browser": "^5.1.1",
+    "@sentry/integrations": "^5.1.0",
     "@sentry/node": "^5.1.0",
     "@sentry/webpack-plugin": "^1.6.2",
     "consola": "^2.6.0",
@@ -31,7 +31,7 @@
     "eslint": "^5.16.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.17.2",
-    "eslint-plugin-jest": "^22.5.0",
+    "eslint-plugin-jest": "^22.5.1",
     "eslint-plugin-node": "^8.0.1",
     "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-standard": "^4.0.0",

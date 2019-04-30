@@ -1,5 +1,9 @@
 {
   "extends": [
     "@nuxtjs"
-  ]
+  ],
+  "rules": {
+    "no-return-assign": "off",
+    "no-sequences": "off"
+  }
 }
