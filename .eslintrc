@@ -11,6 +11,7 @@
   ],
   "rules": {
     "no-return-assign": "off",
-    "no-sequences": "off"
+    "no-sequences": "off",
+    "space-before-function-paren": "off"
   }
 }

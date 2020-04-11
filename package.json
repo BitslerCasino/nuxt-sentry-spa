@@ -1,6 +1,6 @@
 {
   "name": "@bitsler/nuxt-sentry-spa",
-  "version": "0.1.7",
+  "version": "4.0.0",
   "description": "Sentry module for Nuxt.js SPA build",
   "repository": "bitsler/nuxt-sentry-spa",
   "license": "MIT",
@@ -14,33 +14,46 @@
   ],
   "main": "lib/module.js",
   "scripts": {
-    "lint": "eslint --ext .vue,.js lib test",
+    "lint": "eslint --fix --ext .vue,.js lib test",
     "release": "standard-version && git push --follow-tags && npm publish",
-    "test": "npm run lint && jest --runInBand --no-cache --config jest.config.js"
+    "test": "npm run lint && jest"
   },
   "dependencies": {
-    "@sentry/browser": "^5.1.1",
-    "@sentry/integrations": "^5.1.0",
-    "@sentry/webpack-plugin": "^1.6.2",
-    "consola": "^2.6.0",
-    "deepmerge": "^3.2.0"
+    "@sentry/browser": "^5.15.4",
+    "@sentry/integrations": "^5.15.4",
+    "@sentry/webpack-plugin": "^1.10.0",
+    "consola": "^2.11.3",
+    "deepmerge": "^4.2.2"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config": "^0.0.1",
-    "eslint": "^5.16.0",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.17.2",
-    "eslint-plugin-jest": "^22.5.1",
-    "eslint-plugin-node": "^8.0.1",
-    "eslint-plugin-promise": "^4.1.1",
-    "eslint-plugin-standard": "^4.0.0",
-    "eslint-plugin-vue": "^5.2.2",
-    "esm": "^3.2.22",
-    "jest": "^24.7.1",
-    "nuxt": "^2.6.3",
-    "standard-version": "^6.0.1"
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@nuxtjs/eslint-config": "^2.0.2",
+    "@nuxtjs/module-test-utils": "^1.6.1",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^25.1.0",
+    "eslint": "^6.8.0",
+    "jest": "^25.1.0",
+    "nuxt-edge": "^2.11.1-26378723.c5d0067",
+    "standard-version": "^7.1.0"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "babel": {
+    "env": {
+      "test": {
+        "presets": [
+          [
+            "@babel/preset-env",
+            {
+              "targets": {
+                "node": "current"
+              }
+            }
+          ]
+        ]
+      }
+    }
   }
 }

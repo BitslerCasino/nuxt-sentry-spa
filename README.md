@@ -1,3 +1,4 @@
+
 # @bitsler/nuxt-sentry-spa
 [![npm (scoped with tag)](https://img.shields.io/npm/v/@bitsler/nuxt-sentry-spa/latest.svg?style=flat-square)](https://npmjs.com/package/@bitsler/nuxt-sentry-spa)
 [![npm](https://img.shields.io/npm/dt/@bitsler/nuxt-sentry-spa.svg?style=flat-square)](https://npmjs.com/package/@bitsler/nuxt-sentry-spa)
@@ -82,30 +83,11 @@ Normally setting required DSN information would be enough.
   ```
   - See https://docs.sentry.io/platforms/node/pluggable-integrations/ for more information
 
-### serverIntegrations
-- Type: `Dictionary`
-  - Default:
-  ```
-    {
-      Dedupe: {},
-      ExtraErrorData: {},
-      RewriteFrames: {},
-      Transaction: {}
-    }
-  ```
-  - See https://docs.sentry.io/platforms/node/pluggable-integrations/ for more information
-
 ### config
 - Type: `Object`
   - Default: `{
     environment: this.options.dev ? 'development' : 'production'
   }`
-
-### serverConfig
-- Type: `Object`
-  - Default: `{
-  }`
-  - If specified, values will override config values for server sentry plugin
 
 ### clientConfig
 - Type: `Object`

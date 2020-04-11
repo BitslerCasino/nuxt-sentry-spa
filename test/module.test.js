@@ -1,11 +1,11 @@
+import { Nuxt, Builder } from 'nuxt-edge'
+import request from 'request-promise-native'
+
+import config from './fixture/nuxt.config'
+
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 20000
 process.env.PORT = process.env.PORT || 5060
 process.env.NODE_ENV = 'production'
-
-const { Nuxt, Builder } = require('nuxt')
-const request = require('request-promise-native')
-
-const config = require('./fixture/nuxt.config')
 
 const url = path => `http://localhost:${process.env.PORT}${path}`
 const get = path => request(url(path))
@@ -14,7 +14,7 @@ describe('Module', () => {
   let nuxt
 
   beforeAll(async () => {
-    config.modules.unshift(function () {
+    config.modules.unshift(function() {
       // Add test specific test only hooks on nuxt life cycle
     })
 
