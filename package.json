@@ -15,7 +15,7 @@
   "main": "lib/module.js",
   "scripts": {
     "lint": "eslint --fix --ext .vue,.js lib test",
-    "release": "standard-version && git push --follow-tags && npm publish",
+    "release": "standard-version && git push --follow-tags && yarn publish",
     "test": "npm run lint && jest"
   },
   "dependencies": {
